@@ -1,0 +1,95 @@
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.navbar-dark {
+  color: rgba(217, 197, 197, 0.928);
+  border-color: rgba(141, 128, 128, 0.878);
+  background-color: black;
+  height: 50px;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.navbar-brand {
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+  white-space: nowrap;
+  color: white;
+}
+
+.col-sm-3 {
+  flex: 0 0 auto;
+  width: 25%;
+}
+
+.col-md-auto {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.px-3 {
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.nav-item {
+  color: #495057;
+  flex: 1 1 auto;
+  text-align: center;
+  flex-basis: 0;
+  flex-grow: 1;
+  text-align: center;
+  width: 100%;
+}
+
+.d-sm-none {
+  display: none !important;
+}
+
+.d-sm-block {
+  display: block !important;
+}
