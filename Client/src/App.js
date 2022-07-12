@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Nav from "../src/components/Nav";
 import Main from "../src/components/Main";
-import Web3 from "../src/node_modules/web3/dist/web3.min.js";
+import Web3 from "web3/dist/web3.min.js";
 import Tether from "./truffle_abis/Tether.json";
 import RWD from "./truffle_abis/RWD.json";
 import DecentralBank from "./truffle_abis/DecentralBank.json";
@@ -15,9 +15,9 @@ class App extends Component {
 
   async loadWeb3() {
     if (window.ethereum) {
-      window.web3 = new Web3(ethereum);
+      window.web3 = new Web3(window.ethereum);
       try {
-        await ethereum.enable();
+        await window.ethereum.enable();
       } catch (error) {
         console.error(error);
       }
@@ -123,25 +123,6 @@ class App extends Component {
   }
 
   render() {
-    let content;
-    {
-      this.state.loading
-        ? (content = (
-            <p id="loader" className="text-center" style={{ margin: "30px" }}>
-              {" "}
-              LOADING, PLEASE WAIT....
-            </p>
-          ))
-        : (content = (
-            <Main
-              tetherBalance={this.state.tetherBalance}
-              rwdBalance={this.state.rwdBalance}
-              stakingBalance={this.state.stakingBalance}
-              stakeTokens={this.stakeTokens}
-              unstakeTokens={this.unstakeTokens}
-            />
-          ));
-    }
     return (
       <div>
         <Nav account={this.state.account} />
@@ -150,9 +131,18 @@ class App extends Component {
             <main
               role="main"
               className="col-lg-12"
-              style={{ maxWidth: "600px", minHeight: "100vm" }}
+              style={{ maxWidth: "900px", minHeight: "100vm" }}
             >
-              <div>{content}</div>
+              <div>
+                {" "}
+                <Main
+                  tetherBalance={this.state.tetherBalance}
+                  rwdBalance={this.state.rwdBalance}
+                  stakingBalance={this.state.stakingBalance}
+                  stakeTokens={this.stakeTokens}
+                  unstakeTokens={this.unstakeTokens}
+                />
+              </div>
             </main>
           </div>
         </div>

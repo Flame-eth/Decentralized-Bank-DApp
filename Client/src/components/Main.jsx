@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Main.css";
 import tether from "../images/tether.png";
+import Airdrop from "./Airdrop";
 
 class Main extends Component {
   render() {
@@ -23,7 +24,10 @@ class Main extends Component {
                 {window.web3.utils.fromWei(this.props.stakingBalance, "Ether")}{" "}
                 USDT{" "}
               </td>
-              <td> RWD</td>
+              <td>
+                {" "}
+                {window.web3.utils.fromWei(this.props.rwdBalance, "Ether")} RWD
+              </td>
             </tr>
           </tbody>
         </table>
@@ -71,6 +75,7 @@ class Main extends Component {
           <div className="card-body text-center" style={{ color: "blue" }}>
             {" "}
             AIRDROP
+            <Airdrop stakingBalance={this.props.stakingBalance} />
           </div>
         </div>
       </div>
