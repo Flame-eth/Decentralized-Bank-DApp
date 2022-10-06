@@ -53,7 +53,7 @@ contract DecentralBank {
     }
   }
 
-  function untakeTokens() public {
+  function unstakeTokens() public {
     uint balance = stakingBalance[msg.sender];
     require(balance >0, 'staking balance must be more than 0');
 
