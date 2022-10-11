@@ -57,6 +57,7 @@ contract Tether {
             // emit a record of the event
         emit Transfer(_from, _to, _value);
         
+        
         return true;
     }
 }
